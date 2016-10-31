@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Λίστα για ψώνια
+            {{ "Shopping list"|translate }}
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -18,7 +18,7 @@
         </ion-item>
     </ion-list>
     <ion-list no-lines>
-        <ion-item *ngFor="let item of shoppingItems" (click)="removeItem($event, item.id)">
+        <ion-item *ngFor="let item of shoppingItems" (click)="removeItem(item.id)">
             <ion-avatar item-left>
                 <img [src]="item.image"/>
             </ion-avatar>

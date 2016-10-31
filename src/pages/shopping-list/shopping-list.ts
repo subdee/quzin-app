@@ -1,23 +1,26 @@
 import {Component} from '@angular/core';
-import {Http} from '@angular/http';
 import 'rxjs/Rx';
 
 import {NavController} from 'ionic-angular';
+import {ApiService} from "../../services/api.service";
 
 @Component({
     selector: 'page-contact',
-    templateUrl: 'shopping-list.html'
+    templateUrl: 'shopping-list.html',
+    providers: [ApiService]
 })
 export class ShoppingListPage {
 
+    api: ApiService;
     shoppingItems: any;
     items: any;
     allItems: any;
     showList: boolean;
     searchModel: string = '';
 
-    constructor(public navCtrl: NavController, public http: Http) {
-        this.http.get('http://localhost:8000/api/items').map(res => res.json()).subscribe(data => {
+    constructor(public navCtrl: NavController, api: ApiService) {
+        this.api = api;
+        this.api.getAllItems().subscribe(data => {
             this.allItems = data;
         });
         this.loadShoppingList();
@@ -30,13 +33,13 @@ export class ShoppingListPage {
     }
 
     loadShoppingList() {
-        this.http.get('http://localhost:8000/api/shoppingList').map(res => res.json()).subscribe(data => {
+        this.api.getShoppingList().subscribe(data => {
             this.shoppingItems = data;
         });
     }
 
     saveItem(id) {
-        this.http.post('http://localhost:8000/api/shoppingList/' + id, []).map(res => res.json()).subscribe(data => {
+        this.api.saveToShoppingList(id).subscribe(data => {
             if (data.success) {
                 this.loadShoppingList();
             }
@@ -45,8 +48,8 @@ export class ShoppingListPage {
         });
     }
 
-    removeItem(event, id) {
-        this.http.delete('http://localhost:8000/api/shoppingList/' + id, []).map(res => res.json()).subscribe(data => {
+    removeItem(id) {
+        this.api.removeFromShoppingList(id).subscribe(data => {
             if (data.success) {
                 this.loadShoppingList();
             }

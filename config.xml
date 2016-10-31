@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.quzinapp798318" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>quzin-app</name>
+    <name>Quzin</name>
     <description>Mobile app for interacting with Quzin</description>
     <author email="info@subdee.org" href="http://www.subdee.org/">Subdee Studio</author>
     <content src="index.html"/>

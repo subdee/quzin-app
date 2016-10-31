@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
 import {Http, Headers} from "@angular/http";
+import {Observable} from "rxjs";
+import {Injectable} from "@angular/core";
 
-@Component({})
+@Injectable()
 export class ApiService {
     username: string = 'api';
     password: string = 'somerandomtoken';

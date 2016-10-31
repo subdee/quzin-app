@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import 'rxjs/Rx';
 
 import {NavController} from 'ionic-angular';
-import {ApiService} from "../../services/api.service";
+import {ApiService} from "../../app/services/api.service";
 
 @Component({
     selector: 'page-contact',

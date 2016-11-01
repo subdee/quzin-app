@@ -8,13 +8,17 @@
 
 <ion-content>
     <ion-searchbar (ionInput)="getItems($event)" (ionClear)="onCancel($event)" [showCancelButton]="true"
-                   [(ngModel)]="searchModel"></ion-searchbar>
+                   [(ngModel)]="searchModel" (keyup)="updateNewItemName($event)"></ion-searchbar>
     <ion-list *ngIf="showList">
         <ion-item *ngFor="let item of items" (click)="saveItem(item.id)">
             <ion-avatar item-left>
                 <img [src]="item.image"/>
             </ion-avatar>
             <p>{{ item.name }}</p>
+        </ion-item>
+        <ion-item (click)="saveNewItem()">
+            <ion-icon name="add" item-left></ion-icon>
+            <p>{{newItemName}}</p>
         </ion-item>
     </ion-list>
     <ion-list no-lines>

@@ -17,6 +17,7 @@ export class ShoppingListPage {
     allItems: any;
     showList: boolean;
     searchModel: string = '';
+    newItemName: string = '';
 
     constructor(public navCtrl: NavController, api: ApiService) {
         this.api = api;
@@ -41,6 +42,10 @@ export class ShoppingListPage {
         });
     }
 
+    updateNewItemName(event: any) {
+        this.newItemName = event.target.value;
+    }
+
     saveItem(id) {
         this.api.saveToShoppingList(id).subscribe(data => {
             if (data.success) {
@@ -55,6 +60,14 @@ export class ShoppingListPage {
         this.api.removeFromShoppingList(id).subscribe(data => {
             if (data.success) {
                 this.loadShoppingList();
+            }
+        });
+    }
+
+    saveNewItem() {
+        this.api.addNewItem(this.newItemName).subscribe(data => {
+            if (data.success) {
+                this.saveItem(data.id);
             }
         });
     }

@@ -47,4 +47,10 @@ export class ApiService {
             headers: this.generateAuthHeaders()
         }).map(res => res.json());
     }
+
+    getSeasonalItems() {
+        return this.http.get(this.apiEndpoint + '/seasonals', {
+            headers: this.generateAuthHeaders()
+        }).map(res => res.json());
+    }
 }

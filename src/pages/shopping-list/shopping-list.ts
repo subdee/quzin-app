@@ -23,9 +23,12 @@ export class ShoppingListPage {
         this.api.getAllItems().subscribe(data => {
             this.allItems = data;
         });
-        this.loadShoppingList();
         this.initializeItems();
         this.showList = false;
+    }
+
+    ionViewDidEnter() {
+        this.loadShoppingList();
     }
 
     initializeItems() {

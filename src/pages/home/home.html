@@ -1,15 +1,42 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>{{'Home'|translate}}</ion-title>
+        <ion-title text-center>Quzin</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h2>{{'Welcome to Quzin'|translate}}</h2>
-    <p>
-        {{'Here you can manage items and your shopping list'|translate}}
-    </p>
-    <p>
-        {{'Use the menu at the bottom of the screen to get around'|translate}}
-    </p>
+    <ion-card>
+        <ion-card-content>
+            <p>
+                {{'You can see what vegetables or fruits are in season and optionally add them to the shopping list.'}}
+            </p>
+            <ul>
+                <li>{{'To add an item to the shopping list, simply click on the "Add to list" button.'|translate}}</li>
+            </ul>
+            <button ion-button icon-left block color="primary" (click)="goToSeasonal()">
+                <ion-icon name="snow"></ion-icon>
+                {{'Seasonal items'|translate}}
+            </button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <p>
+                {{'In the shopping list you can add items to the shopping list and/or remove them.'}}
+            </p>
+            <ul>
+                <li>{{'To add an item to the list, click on the search bar and start typing the item you want to add.
+                    Then click on the item below to add it.'|translate}}
+                </li>
+                <li>{{'To remove an item, click on it when viewing the list.'|translate}}</li>
+                <li>{{'You can also add a custom item by typing it in the search bar and then selecting "Add new
+                    item".'|translate}}
+                </li>
+            </ul>
+            <button ion-button icon-left block color="primary" (click)="goToShoppingList()">
+                <ion-icon name="cart"></ion-icon>
+                {{'Shopping List'|translate}}
+            </button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

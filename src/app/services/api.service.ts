@@ -6,8 +6,7 @@ import {Injectable} from "@angular/core";
 export class ApiService {
     username: string = 'api';
     password: string = 'somerandomtoken';
-    // apiEndpoint: string = 'http://quzin.subdee.org/api';
-    apiEndpoint: string = 'http://localhost:8000/api';
+    apiEndpoint: string = 'http://quzin.subdee.org/api';
 
     constructor(public http: Http) {
     }

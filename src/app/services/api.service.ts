@@ -41,4 +41,10 @@ export class ApiService {
             headers: this.generateAuthHeaders()
         }).map(res => res.json());
     }
+
+    addNewItem(name) {
+        return this.http.post(this.apiEndpoint + '/items', {name: name}, {
+            headers: this.generateAuthHeaders()
+        }).map(res => res.json());
+    }
 }

@@ -7,24 +7,24 @@ import {TranslateService} from "ng2-translate";
 
 
 @Component({
-    template: `<ion-nav [root]="rootPage"></ion-nav>`
+  template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class QuzinApp {
-    rootPage = TabsPage;
+  rootPage = TabsPage;
 
-    constructor(platform: Platform, private  translate: TranslateService) {
-        platform.ready().then(() => {
-            StatusBar.styleDefault();
-            Splashscreen.hide();
-        });
-        this.translate = translate;
-        this.translateConfig();
-    }
+  constructor(platform: Platform, private translate: TranslateService) {
+    platform.ready().then(() => {
+      StatusBar.styleDefault();
+      Splashscreen.hide();
+    });
+    this.translate = translate;
+    this.translateConfig();
+  }
 
-    translateConfig() {
-        var userLang = navigator.language.split('-')[0];
-        userLang = /(el)/gi.test(userLang) ? userLang : 'el';
-        this.translate.setDefaultLang('el');
-        this.translate.use(userLang);
-    }
+  translateConfig() {
+    var userLang = navigator.language.split('-')[0];
+    userLang = /(el)/gi.test(userLang) ? userLang : 'el';
+    this.translate.setDefaultLang('el');
+    this.translate.use(userLang);
+  }
 }

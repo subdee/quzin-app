@@ -5,14 +5,14 @@ import {ShoppingListPage} from '../shopping-list/shopping-list';
 import {SeasonalPage} from "../seasonal/seasonal";
 
 @Component({
-    templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html'
 })
 export class TabsPage {
-    tab1Root: any = HomePage;
-    tab2Root: any = SeasonalPage;
-    tab3Root: any = ShoppingListPage;
+  tab1Root: any = HomePage;
+  tab2Root: any = SeasonalPage;
+  tab3Root: any = ShoppingListPage;
 
-    constructor() {
+  constructor() {
 
-    }
+  }
 }

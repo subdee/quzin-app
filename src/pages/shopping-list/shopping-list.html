@@ -1,32 +1,33 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>
-            {{ "Shopping list"|translate }}
-        </ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title text-center>
+      {{ "Shopping list"|translate }}
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <ion-searchbar (ionInput)="getItems($event)" (ionClear)="onCancel($event)" [showCancelButton]="true"
-                   [(ngModel)]="searchModel" (keyup)="updateNewItemName($event)"></ion-searchbar>
-    <ion-list *ngIf="showList" inset>
-        <ion-item *ngFor="let item of items" (click)="saveItem(item.id)">
-            <ion-avatar item-left>
-                <img [src]="item.image"/>
-            </ion-avatar>
-            <p>{{ item.name }}</p>
-        </ion-item>
-        <ion-item (click)="saveNewItem()">
-            <ion-icon name="add" item-left></ion-icon>
-            <p>{{newItemName}}</p>
-        </ion-item>
-    </ion-list>
-    <ion-list no-lines>
-        <ion-item *ngFor="let item of shoppingItems" (click)="removeItem(item.id)">
-            <ion-avatar item-left>
-                <img [src]="item.image"/>
-            </ion-avatar>
-            <p>{{ item.name }}</p>
-        </ion-item>
-    </ion-list>
+  <ion-searchbar (ionInput)="getItems($event)" (ionClear)="onCancel($event)" [showCancelButton]="true"
+                 [(ngModel)]="searchModel" (keyup)="updateNewItemName($event)"
+                 [placeholder]="'Search'|translate"></ion-searchbar>
+  <ion-list *ngIf="showList" inset>
+    <ion-item *ngFor="let item of items" (click)="saveItem(item.id)">
+      <ion-avatar item-left>
+        <img [src]="item.image"/>
+      </ion-avatar>
+      <p>{{ item.name }}</p>
+    </ion-item>
+    <ion-item (click)="saveNewItem()">
+      <ion-icon name="add" item-left></ion-icon>
+      <p>{{newItemName}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of shoppingItems" (swipe)="removeItem(item.id)">
+      <ion-avatar item-left>
+        <img [src]="item.image"/>
+      </ion-avatar>
+      <p>{{ item.name }}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

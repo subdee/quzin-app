@@ -9,32 +9,32 @@ import {Http} from "@angular/http";
 import {SeasonalPage} from "../pages/seasonal/seasonal";
 
 export function createTranslateLoader(http: Http) {
-    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 @NgModule({
-    declarations: [
-        QuzinApp,
-        SeasonalPage,
-        ShoppingListPage,
-        HomePage,
-        TabsPage
-    ],
-    imports: [
-        IonicModule.forRoot(QuzinApp),
-        TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (createTranslateLoader),
-            deps: [Http]
-        })
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        QuzinApp,
-        SeasonalPage,
-        ShoppingListPage,
-        HomePage,
-        TabsPage
-    ]
+  declarations: [
+    QuzinApp,
+    SeasonalPage,
+    ShoppingListPage,
+    HomePage,
+    TabsPage
+  ],
+  imports: [
+    IonicModule.forRoot(QuzinApp),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    })
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    QuzinApp,
+    SeasonalPage,
+    ShoppingListPage,
+    HomePage,
+    TabsPage
+  ]
 })
 export class AppModule {
 }

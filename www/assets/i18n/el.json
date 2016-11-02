@@ -1,8 +1,14 @@
 {
   "Shopping list": "Λίστα για ψώνια",
-  "Shopping List": "λιστα για ψωνια",
   "Seasonal": "Εποχής",
-  "Here you can manage items and your shopping list": "Απο εδώ μπορείτε να διαχειριστείτε τα αντικείμενα και την λίστα με τα ψώνια.",
-  "Use the menu at the bottom of the screen to get around": "Χρησιμοποιήστε το μενού που βρίσκεται στο κάτω μέρος της οθόνης για να περιηγηθείτε",
-  "Item added to shopping list": "Προστέθηκε στην λίστα με τα ψώνια"
+  "Seasonal items": "Είδη εποχής",
+  "In the shopping list you can add items to the shopping list and/or remove them.": "Στην λίστα για ψώνια μπορείτε να προσθέσετ ή και να αφαιρέσετε είδη.",
+  "You can see what vegetables or fruits are in season and optionally add them to the shopping list.": "Μπορείτε να δείτε τη φρούτα/λαχανικά είναι εποχής και αν θέλετε να τα προσθέσετε στην λίστα με τα ψώνια.",
+  "Item added to shopping list": "Προστέθηκε στην λίστα με τα ψώνια",
+  "To add an item to the shopping list, simply click on the item.": "Για να προσθέσετε ένα είδος στην λίστα με τα ψώνια, απλά πατήστε πάνω του.",
+  "To add an item to the list, click on the search bar and start typing the item you want to add. Then click on the item below to add it.": "Για να προσθέσετε ένα είδος στην λίστα, πατήστε στην μπάρα αναζήτησης και πληκτρολογήστε το είδος που θέλετε. Πατήστε πάνω του για να το προσθέσετε.",
+  "To remove an item, swipe it to the left or right.": "Για να αφαιρέσετε ένα είδος απο την λίστα, διώξτε το αριστερά ή δεξιά.",
+  "You can also add a custom item by typing it in the search bar and then selecting it below.": "Μπορείτε επίσης να προσθέσετε και δικά σας είδη πληκτρολογόντας τα στην μπάρα αναζήτησης και μετά πατώντας στο συν απο κάτω.",
+  "Search": "Αναζήτηση",
+  "Hold on...": "Μισό..."
 }

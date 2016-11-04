@@ -53,4 +53,11 @@ export class ApiService {
       headers: this.generateAuthHeaders()
     }).map(res => res.json());
   }
+
+  saveDeviceId(deviceId, registrationId) {
+    console.log(deviceId);
+    return this.http.put(this.apiEndpoint + '/devices', {id: deviceId, registrationId: registrationId}, {
+      headers: this.generateAuthHeaders()
+    }).map(res => res.json());
+  }
 }
